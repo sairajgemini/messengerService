@@ -10,11 +10,14 @@ public class DatabaseClass {
 	private static Map<Long, Message> messages = new HashMap<>();
 	private static Map<Long, Profile> profiles = new HashMap<>();
 
-	public static Map<Long, Message> getMessages() {
+	static{
 		if (messages.size() == 0) {
 			messages.put(1L, new Message(1L, "Hello World!!!", "Koushik"));
 			messages.put(2L, new Message(2L, "Hello Jersey!!!", "Saikat"));
 		}
+	}
+	
+	public static Map<Long, Message> getMessages() {
 		return messages;
 	}
 
